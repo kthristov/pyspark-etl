@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "pyspark-exercise"
+version = "0.0.1"
+description = "Interview code for Oxylabs"
+authors = ["Oxylabs <kaloyan.hristov@oxylabs.io>"]
+exclude = ["src/main*.py"]
+packages = [
+    { include = "src/**/*.py" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<4.0"
+
+
+[tool.poetry.dev-dependencies]
+pyspark = "3.5.1"
+pytest = "8.0.2"
+setuptools = "70.2.0"
+pytest-cov = "4.1.0"
+flake8 = "7.0.0"
+mypy = "1.8.0"
+black = "23.12.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.mypy.overrides]]
+module = "src.*"
+ignore_missing_imports = true
+
+[tool.flake8]
+extend-ignore = "E203"
+max-line-length = 88
